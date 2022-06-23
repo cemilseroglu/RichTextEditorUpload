@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Makale Listesi";
+}
+@model List<Article>
+<style>
+    .ck-editor__editable_inline {
+        min-height: 400px;
+    }
+</style>
+
+
+<div class="row">
+    <table class="col col-md-6 table align-middle mb-0">
+        <thead>
+            <tr>
+                <th>Başlık</th>
+                <th>İçerik Metni</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@Html.Raw(@item.Content)</td>
+                </tr>  
+            }
+        </tbody>
+    </table>
+</div>
